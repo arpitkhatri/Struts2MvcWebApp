@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+    <package name="Project_Work" extends="struts-default">
+        <result-types>
+            <result-type name="json" class="org.apache.struts2.json.JSONResult" />
+        </result-types>
+        <action name="Login" class="controller.Login">
+            <result>/jsp/Login.jsp</result>
+        </action>
+        
+        <action name="SubmitLogin" class="controller.Authenticate">
+            <result name="SUCCESS">/jsp/OotmConnPoint.jsp</result>
+            <result name="ERROR">/jsp/Login.jsp</result>
+        </action>
+        <action name="Platform" class="controller.Platform" >
+            <result>/jsp/Platform.jsp</result>
+        </action>
+        <action name="HomePage" class="controller.Homepage">
+            <result name="SUCCESS">/jsp/OotmConnPoint.jsp</result>
+            <result name="ERROR">/jsp/Login.jsp</result>
+        </action>
+        <action name="Logout" class="controller.Logout">
+            <result>/jsp/Login.jsp</result>
+        </action>
+        <action name="getList" class="controller.Platform" method="getPlatformList" >
+            <result type="json" />
+        </action>
+        <action name="deletePlatformById" class="controller.Platform" method="deletePlatformById" >
+        </action>
+        
+        <action name="updatePlatformDetails" class="controller.Platform" method="updatePlatformDetails" >
+        </action>
+        <action name="addPlatformDetails" class="controller.Platform" method="addPlatformDetails" >
+        </action>
+        <action name="userSetup" class="controller.ManageUser"  >
+            <result>/jsp/ManageUser.jsp</result>
+        </action>
+        
+        <action name="getListOfUser" class="controller.ManageUser" method="getListOfUser" >
+            <result type="json" />
+        </action>
+        <action  name="addUserDetails" class="controller.ManageUser" method="addUserDetails" />
+        <action  name="updateUserDetails" class="controller.ManageUser" method="updateUserDetails" />
+        <action  name="deleteUserDetailById" class="controller.ManageUser" method="deleteUserDetailById" />
+        <action  name="getUserRoles" class="controller.ManageUser" method="getUserRoles" />
+        
+        <!-- For Device Type -->
+        <action name="DeviceType" class="controller.DeviceType"  >
+            <result>/jsp/DeviceType.jsp</result>
+        </action>
+        <action name="getListDevices" class="controller.DeviceType" method="getListDevices" >
+            <result type="json" />
+        </action>
+        <action  name="addDeviceType" class="controller.DeviceType" method="addDeviceType" />
+        <action  name="updateDeviceType" class="controller.DeviceType" method="updateDeviceType" />
+        <action  name="deleteDeviceType" class="controller.DeviceType" method="deleteDeviceType" />
+        <action  name="getPlatFormCode" class="controller.DeviceType" method="getPlatFormCode" />
+      
+        <!-- For Device Cateogry -->
+        <action name="DeviceCateogry" class="controller.DeviceCategory"  >
+            <result>/jsp/DeviceCategory.jsp</result>
+        </action>
+        <action name="getListDeviceCategory" class="controller.DeviceCategory" method="getListDeviceCategory" >
+            <result type="json" />
+        </action>
+        <action  name="addDeviceCategory" class="controller.DeviceCategory" method="addDeviceCategory" />
+        <action  name="updateDeviceCateogry" class="controller.DeviceCategory" method="updateDeviceCateogry" />
+        <action  name="deleteDeviceCategory" class="controller.DeviceCategory" method="deleteDeviceCategory" />
+        <action  name="getDeviceTypeCode" class="controller.DeviceCategory" method="getDeviceTypeCode" />
+        <!-- For Device Sub Cateogry -->
+        <action name="DeviceSubCateogry" class="controller.DeviceSubCategory"  >
+            <result>/jsp/DeviceSubCategory.jsp</result>
+        </action>
+        <action name="getListDeviceSubCategory" class="controller.DeviceSubCategory" method="getListDeviceSubCategory" >
+            <result type="json" />
+        </action>
+        <action  name="addDeviceSubCategory" class="controller.DeviceSubCategory" method="addDeviceSubCategory" />
+        <action  name="updateDeviceSubCateogry" class="controller.DeviceSubCategory" method="updateDeviceSubCateogry" />
+        <action  name="deleteDeviceSubCategory" class="controller.DeviceSubCategory" method="deleteDeviceSubCategory" />
+        <action  name="getDeviceCategoryCode" class="controller.DeviceSubCategory" method="getDeviceCategoryCode" />
+        <!-- For Device OOTM COnnection Point -->
+        <action name="OotmConnPoint" class="controller.OotmConnectionPoint"  >
+            <result>/jsp/OotmConnPoint.jsp</result>
+        </action>
+        <action name="getListDeviceOotmConnPoint" class="controller.OotmConnectionPoint" method="getListDeviceOotmConnPoint" >
+            <result type="json" />
+        </action>
+        <action  name="addOotmConnectionPoint" class="controller.OotmConnectionPoint" method="addOotmConnectionPoint" />
+        <action  name="updateOotmConnectionPoint" class="controller.OotmConnectionPoint" method="updateOotmConnectionPoint" />
+        <action  name="deleteOotmConnectionPoint" class="controller.OotmConnectionPoint" method="deleteOotmConnectionPoint" />
+        <action  name="getDeviceSubCategoryCode" class="controller.OotmConnectionPoint" method="getDeviceSubCategoryCode" />
+        <action  name="getReportedDeviceType" class="controller.OotmConnectionPoint" method="getReportedDeviceType" />
+
+    </package>
+</struts>
